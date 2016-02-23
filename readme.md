@@ -1,5 +1,5 @@
 # Laravel-React
-An example app using Laravel 5.2, React, react-router and react-refetch.
+An example app using [Laravel 5.2](https://laravel.com), [React](https://facebook.github.io/react), [react-router](https://github.com/reactjs/react-router) and [react-refetch](https://github.com/heroku/react-refetch).
 
 ### UP & RUNNING
 - Clone the repo
