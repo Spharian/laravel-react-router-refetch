@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Redirect every routes but the API's ones
+| Return index view for every routes but the API's ones
 |--------------------------------------------------------------------------
 */
 
