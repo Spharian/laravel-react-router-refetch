@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const NoMatch = React.createClass({
+export default class NoMatch extends Component {
 
   render() {
     return (
@@ -8,6 +8,4 @@ const NoMatch = React.createClass({
     );
   }
 
-});
-
-export default NoMatch;
+}

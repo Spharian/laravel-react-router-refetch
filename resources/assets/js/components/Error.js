@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Error = React.createClass({
+export default class Error extends Component {
 
   render() {
     return (
@@ -8,6 +8,4 @@ const Error = React.createClass({
     );
   }
 
-});
-
-export default Error;
+}

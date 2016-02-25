@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-const App = React.createClass({
+export default class App extends Component {
 
   render() {
     return (
@@ -17,6 +17,4 @@ const App = React.createClass({
     );
   }
 
-});
-
-export default App;
+}

@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-refetch'
-import RefetchMixin from '../mixins/RefetchMixin'
 
-const Post = React.createClass({
-  mixins: [RefetchMixin],
+export default class Post extends Component {
 
   render() {
     return (
@@ -17,8 +15,8 @@ const Post = React.createClass({
     );
   }
 
-});
+}
 
-export default connect(props => ({
+connect(props => ({
   postFetch: `/api/posts/${props.params.postId}`,
 }))(Post)
