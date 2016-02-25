@@ -1,22 +1,25 @@
 import React, { Component } from 'react'
-import { connect } from 'react-refetch'
+import { connect, PromiseState } from 'react-refetch'
+import PromiseStateContainer from './PromiseStateContainer'
 
-export default class Post extends Component {
+class Post extends Component {
 
   render() {
     return (
-      <div>
-        {RefetchMixin.fulfilled(this.props.postFetch, post => {
+      <PromiseStateContainer
+        ps={PromiseState.all([this.props.postFetch])}
+        onFulfillment={([post]) => {
           return (
             <p>{post.message}</p>
-          );
-        })}
-      </div>
+           )
+          }
+        }
+      />
     );
   }
 
 }
 
-connect(props => ({
+export default connect(props => ({
   postFetch: `/api/posts/${props.params.postId}`,
 }))(Post)

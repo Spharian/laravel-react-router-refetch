@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { connect } from 'react-refetch'
+import { connect, PromiseState } from 'react-refetch'
 import { Link } from 'react-router'
+import PromiseStateContainer from './PromiseStateContainer'
 
-export default class Posts extends Component {
+class Posts extends Component {
 
   render() {
     return (
-      <div>
-        {RefetchMixin.fulfilled(this.props.postsFetch, posts => {
+      <PromiseStateContainer
+        ps={PromiseState.all([this.props.postsFetch])}
+        onFulfillment={([posts]) => {
           return (
             <ul>
               {posts.map((post) => {
@@ -18,14 +20,15 @@ export default class Posts extends Component {
                 );
               })}
             </ul>
-          );
-        })}
-      </div>
+           )
+          }
+        }
+      />
     );
   }
 
 }
 
-connect(props => ({
+export default connect(props => ({
   postsFetch: '/api/posts',
 }))(Posts)
