@@ -11,7 +11,7 @@ class Post extends Component {
         onFulfillment={([post]) => {
           return (
             <p>{post.message}</p>
-           )
+          )
         }}
       />
     )
