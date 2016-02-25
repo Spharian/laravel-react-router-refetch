@@ -12,10 +12,9 @@ class Post extends Component {
           return (
             <p>{post.message}</p>
            )
-          }
-        }
+        }}
       />
-    );
+    )
   }
 
 }
