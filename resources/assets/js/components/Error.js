@@ -4,7 +4,9 @@ class Error extends Component {
 
   render() {
     return (
-      <div>Error: {this.props.error}</div>
+      <p style={{color: 'red'}}>
+        Error: {this.props.error.message}
+      </p>
     )
   }
 

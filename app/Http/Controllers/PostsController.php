@@ -14,6 +14,6 @@ class PostsController extends Controller
 
     public function show($id)
     {
-        return Post::find($id);
+        return Post::findOrFail($id);
     }
 }
