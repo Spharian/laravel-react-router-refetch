@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect, PromiseState } from 'react-refetch'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import PromiseStateContainer from './PromiseStateContainer'
 
 class Posts extends Component {

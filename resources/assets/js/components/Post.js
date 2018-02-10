@@ -20,5 +20,5 @@ class Post extends Component {
 }
 
 export default connect(props => ({
-  postFetch: `/api/posts/${props.params.postId}`,
+  postFetch: `/api/posts/${props.match.params.postId}`,
 }))(Post)

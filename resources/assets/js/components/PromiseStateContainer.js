@@ -1,22 +1,10 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect, PromiseState } from 'react-refetch'
 import Loading from './Loading'
 import Error from './Error'
 
 class PromiseStateContainer extends Component {
-  static propTypes = {
-    ps: PropTypes.instanceOf(PromiseState).isRequired,
-    onPending: PropTypes.func,
-    onNoResults: PropTypes.func,
-    onRejection: PropTypes.func,
-    onFulfillment: PropTypes.func.isRequired,
-  }
-
-  static defaultProps = {
-    onPending: (meta) => <Loading />,
-    onNoResults: (value, meta) => <Error error="No results" />,
-    onRejection: (reason, meta) => <Error error={reason} />,
-  }
 
   isEmptyObject(object) {
     return Object.keys(object).length === 0
@@ -38,6 +26,21 @@ class PromiseStateContainer extends Component {
       return null
     }
   }
+
+}
+
+PromiseStateContainer.propTypes = {
+  ps: PropTypes.instanceOf(PromiseState).isRequired,
+  onPending: PropTypes.func,
+  onNoResults: PropTypes.func,
+  onRejection: PropTypes.func,
+  onFulfillment: PropTypes.func.isRequired,
+}
+
+PromiseStateContainer.defaultProps = {
+  onPending: meta => <Loading />,
+  onNoResults: (value, meta) => <Error error="No results" />,
+  onRejection: (reason, meta) => <Error error={reason} />,
 }
 
 export default PromiseStateContainer

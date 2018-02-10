@@ -1,16 +1,30 @@
 {
   "private": true,
-  "devDependencies": {
-    "gulp": "^3.8.8"
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "dependencies": {
-    "bootstrap-sass": "^3.0.0",
-    "classnames": "^2.2.3",
-    "laravel-elixir": "^2.2.1",
-    "laravel-elixir-livereload": "0.0.3",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-refetch": "^0.6.0",
-    "react-router": "^2.0.0"
-  }
+  "devDependencies": {
+    "axios": "^0.17",
+    "babel-preset-react": "^6.23.0",
+    "bootstrap": "^4.0.0",
+    "classnames": "^2.2.5",
+    "cross-env": "^5.1",
+    "jquery": "^3.2",
+    "laravel-mix": "^2.0",
+    "lodash": "^4.17.4",
+    "popper.js": "^1.12",
+    "prop-types": "^15.6.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-refetch": "^1.0.4",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "dependencies": {}
 }
